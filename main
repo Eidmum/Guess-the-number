@@ -1,0 +1,27 @@
+from random import *
+print("Number guessing game")
+number=randint(1,10)
+chances=0
+while chances<6:
+    try:
+        guess = int(input('Guess a number between 1 and 10 : '))
+        if guess == number:
+            print("Congratulation,YOU WON!!!!!!")
+            print("You guess the correct number in {} tries".format(chances + 1))
+            break
+        elif guess < number:
+            print('Oops.Your guess was too low')
+            print('Guess a number higher than', guess)
+            chances += 1
+        elif guess > number:
+            print('Oops.Your guess was too high')
+            print('Guess a number lower than', guess)
+            chances += 1
+    except Exception:
+        print('You must input a number')
+else:
+    print("Oops.......")
+    print('The correct number was',number)
+    print('Game Over')
+
+
